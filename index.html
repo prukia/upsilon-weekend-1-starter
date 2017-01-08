@@ -8,21 +8,50 @@
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
     <script src="app.js" charset="utf-8"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css"/>
     </head>
   <body>
-    <form>
-      <label for="employeeFirstName">First Name</label>
+    <form id='employeeInfo'>
+      <br><label for="employeeFirstName">First Name</label>
       <input type="text" id="employeeFirstName" name="employeeFirstName" />
       <label for="employeeLastName">Last Name</label>
-      <input type="text" id="employeeLastName" name="employeeLastName" />
-      <label for="employeeIdNumber">ID Number</label>
-      <input type="text" name="employeeIdNumber" />
-      <input type="submit" value="Submit" />
+      <input type="text" id="employeeLastName" name="employeeLastName" /></br>
+      <br/><label for="employeeIdNumber">ID Number</label>
+      <input type="text" name="employeeIdNumber" /></br>
+      <br><label for="employeeJobTitle">Job Title</label>
+      <input type="text" name="employeeJobTitle" /></br>
+      <br><label for="employeeAnnualSalary">Annual Salary</label>
+      <input type="text" name="employeeAnnualSalary" /></br>
+      <br><input type="submit" value="Submit" /></br>
     </form>
 
     <div id="employees">
-      <h2>Employees</h2>
+      <h3>Employee List:</h3>
       <!-- to be added via JavaScript -->
+    <table id="employeeData">
+      <thread>
+        <tr>
+          <th>First Name:</th>
+          <th>Last Name:</th>
+          <th>ID:</th>
+          <th>Title:</th>
+          <th>Annual Salary:</th>
+        </tr>
+      </thread>
+      <tbody id = "new">
+      <!-- //create tr and td in JS to append info into the DOM-->
+
+      </tbody>
+    </table>
+
+    <button type="submit" value="remove" name="op">Remove Employee</button>
+
+
+    </div>
+    <div id="monthlySalary">
+      <h5>Monthly Salary Expenditures:</h5>
+
     </div>
   </body>
 </html>

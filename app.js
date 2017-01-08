@@ -20,12 +20,26 @@ $(function () {
 });
 
 function appendDom(emp) {
-  var $emp = $('<div class="employee"></div>'); // create a div jQuery object
 
-  $emp.append('<p>' + emp.employeeFirstName + ' ' + emp.employeeLastName + '</p>'); // add our employee data
-  $emp.append('<p>' + emp.employeeIdNumber + '</p>');
+  var $emp = $('<tr>');// create a div jQuery object
+  $emp.append('<td>' + emp.employeeFirstName + '</td>'); // add our employee data
+  $emp.append('<td>' + emp.employeeLastName + '</td>');
+  $emp.append('<td>' + emp.employeeIdNumber + '</td>');
+  $emp.append('<td>' + emp.employeeJobTitle + '</td>');
+  $emp.append('<td>' + emp.employeeAnnualSalary + '</td>');
+  $emp.append('</tr>');
 
-  $('#employees').append($emp); // append our div to the DOM
+  $('#new').append($emp); // append our div to the DOM
+
+  var $emp1 = $('<div class="monthlySalary"></div>');
+  var monthlySalary = (emp.employeeAnnualSalary/12);
+  $emp1.append('<p>' + monthlySalary + '</p>');
+
+  $('#monthlySalary').append($emp1);
+  parseFloat('#monthlySalary').toFixed(2);
+  //to get two decimals places only
+
+  console.log(monthlySalary);
 }
 
 function clearForm() {
