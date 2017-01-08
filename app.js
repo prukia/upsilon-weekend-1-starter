@@ -33,10 +33,12 @@ function appendDom(emp) {
 
   var $emp1 = $('<div class="monthlySalary"></div>');
   var monthlySalary = (emp.employeeAnnualSalary/12);
-  $emp1.append('<p>' + monthlySalary + '</p>');
+//you can put parseFloat and toFixed on line 35
+  monthlySalary = parseFloat(monthlySalary).toFixed(2);
 
+  $emp1.append('<p>' + monthlySalary + '</p>');
   $('#monthlySalary').append($emp1);
-  parseFloat('#monthlySalary').toFixed(2);
+
   //to get two decimals places only
 
   console.log(monthlySalary);
