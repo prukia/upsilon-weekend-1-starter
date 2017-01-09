@@ -29,11 +29,12 @@ function appendDom(emp) {
   $emp.append('<td>' + emp.employeeAnnualSalary + '</td>');
   $emp.append('</tr>');
 
+
   $('#new').append($emp); // append our div to the DOM
 
   var $emp1 = $('<div class="monthlySalary"></div>');
   var monthlySalary = (emp.employeeAnnualSalary/12);
-//you can put parseFloat and toFixed on line 35
+//you can put parseFloat and toFixed on line 35 also.
   monthlySalary = parseFloat(monthlySalary).toFixed(2);
 
   $emp1.append('<p>' + monthlySalary + '</p>');
@@ -47,3 +48,8 @@ function appendDom(emp) {
 function clearForm() {
   $('form').find('input[type=text]').val('');
 }
+
+// $("button").click(function remove(){
+//   $('#employees').remove();
+// }
+//stretch goals work on making this function work. 
