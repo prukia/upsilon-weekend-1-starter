@@ -27,6 +27,7 @@ function appendDom(emp) {
   $emp.append('<td>' + emp.employeeIdNumber + '</td>');
   $emp.append('<td>' + emp.employeeJobTitle + '</td>');
   $emp.append('<td>' + '$' + emp.employeeAnnualSalary + '</td>');
+  $emp.append('<td><button class="delete">Delete this employee</button></td>')
   $emp.append('</tr>');
 
 
@@ -49,7 +50,7 @@ function clearForm() {
   $('form').find('input[type=text]').val('');
 }
 
-$("button").onclick(function remove(){
-$('#employees').remove();
+$(".delete").on('click', function (event){
+$(this).closest ('tr').remove();
  });
 //stretch goals work on making this function work.
