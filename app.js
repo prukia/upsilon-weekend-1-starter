@@ -26,7 +26,7 @@ function appendDom(emp) {
   $emp.append('<td>' + emp.employeeLastName + '</td>');
   $emp.append('<td>' + emp.employeeIdNumber + '</td>');
   $emp.append('<td>' + emp.employeeJobTitle + '</td>');
-  $emp.append('<td>' + emp.employeeAnnualSalary + '</td>');
+  $emp.append('<td>' + '$' + emp.employeeAnnualSalary + '</td>');
   $emp.append('</tr>');
 
 
@@ -37,7 +37,7 @@ function appendDom(emp) {
 //you can put parseFloat and toFixed on line 35 also.
   monthlySalary = parseFloat(monthlySalary).toFixed(2);
 
-  $emp1.append('<p>' + monthlySalary + '</p>');
+  $emp1.append('<p>' + '$' + monthlySalary + '</p>');
   $('#monthlySalary').append($emp1);
 
   //to get two decimals places only
@@ -49,7 +49,7 @@ function clearForm() {
   $('form').find('input[type=text]').val('');
 }
 
-// $("button").click(function remove(){
-//   $('#employees').remove();
-// }
-//stretch goals work on making this function work. 
+$("button").onclick(function remove(){
+$('#employees').remove();
+ });
+//stretch goals work on making this function work.
