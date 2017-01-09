@@ -1,7 +1,13 @@
 # Weekend 1 Challenge Starter Repo
 
-If you want, you can start your project by forking and cloning this repo.
+**Author** Rukia Sheikh-Mhamed
+*Date Created:* Jan 8th, 2017
 
-However, feel free to start from scratch,too.
-
-**REMEMBER:** Carefully read the instructions in the assignment app.
+### Files in Project Include:
+1. index.html
+	* basic html functionality for form application.
+  * includes table to append info from JS
+2. styles.css
+	* basic style content for form content and table.
+3. app.js
+	* basic js functionality for form assignment. 
