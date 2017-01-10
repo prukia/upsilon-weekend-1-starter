@@ -1,7 +1,14 @@
+var totalMonthlySalary = 0;
+
 $(function () {
   console.log('document is ready');
 
 
+  $('#employeeData').on('click', '.delete', function () {
+    $(this).parent().parent().remove();
+  });
+
+//delete button has to be outside of submit button
   $('form').on('submit', function (event) {
     console.log('form submitted');
 
@@ -39,19 +46,24 @@ function appendDom(emp) {
 
   $('#new').append($emp); // append our div to the DOM
 
-  var $emp1 = $('<div class="monthlySalary"></div>');
-  var monthlySalary = (emp.employeeAnnualSalary/12);
-  //you can put parseFloat and toFixed on line 35 also.
-  monthlySalary = parseFloat(monthlySalary).toFixed(2);
+  // var $emp1 = $('<div class="monthlySalary"></div>');
 
-  $emp1.append('<p>' + '$' + monthlySalary + '</p>');
-  $('#monthlySalary').append($emp1);
+  totalMonthlySalary = Number(totalMonthlySalary);
+  totalMonthlySalary += (emp.employeeAnnualSalary/12);
+
+  //better to us toLocaleString("en-US", {style: 'currency', currency: 'USD'}
+  //then parseFloat then you wouldn't need to do line 51
+  totalMonthlySalary = parseFloat(totalMonthlySalary).toFixed(2);
+
+  // $emp1.append('<p>' + '$' + monthlySalary + '</p>');
+  //instead of appending .text
+  $('#monthlySalary').text('Monthly Salary Expenditures: $' + totalMonthlySalary);
 
 
   // $('#monthlySalary').text(totalMonthlySalary.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
   //to get two decimals places only
 
-  console.log(monthlySalary);
+  console.log(totalMonthlySalary);
 }
 
 function clearForm() {
