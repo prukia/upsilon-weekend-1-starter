@@ -1,6 +1,7 @@
 $(function () {
   console.log('document is ready');
 
+
   $('form').on('submit', function (event) {
     console.log('form submitted');
 
@@ -21,6 +22,11 @@ $(function () {
 
 function appendDom(emp) {
 
+  $('#employeesData').on('click', '.delete', function () {
+    $(this).parent().parent().remove();
+  });
+
+
   var $emp = $('<tr>');// create a div jQuery object
   $emp.append('<td>' + emp.employeeFirstName + '</td>'); // add our employee data
   $emp.append('<td>' + emp.employeeLastName + '</td>');
@@ -35,12 +41,14 @@ function appendDom(emp) {
 
   var $emp1 = $('<div class="monthlySalary"></div>');
   var monthlySalary = (emp.employeeAnnualSalary/12);
-//you can put parseFloat and toFixed on line 35 also.
+  //you can put parseFloat and toFixed on line 35 also.
   monthlySalary = parseFloat(monthlySalary).toFixed(2);
 
   $emp1.append('<p>' + '$' + monthlySalary + '</p>');
   $('#monthlySalary').append($emp1);
 
+
+  // $('#monthlySalary').text(totalMonthlySalary.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
   //to get two decimals places only
 
   console.log(monthlySalary);
@@ -50,7 +58,8 @@ function clearForm() {
   $('form').find('input[type=text]').val('');
 }
 
-$(".delete").on('click', function (event){
-$(this).closest ('tr').remove();
- });
+
+
+
+
 //stretch goals work on making this function work.
