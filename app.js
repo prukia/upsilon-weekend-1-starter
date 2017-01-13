@@ -68,6 +68,7 @@ function appendDom(emp) {
 
 function clearForm() {
   $('form').find('input[type=text]').val('');
+  $('form').find('input[type=number]').val('');
 }
 
 
